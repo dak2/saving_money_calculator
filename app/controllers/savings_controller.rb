@@ -1,5 +1,6 @@
 class SavingsController < ApplicationController
   before_action :set_saving, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /savings or /savings.json
   def index
