@@ -6,6 +6,7 @@ Saving Money Calculator
 # Description
 This application is calculator for saving money.
 When you bear buying something, you can save money. This application can calculate it by everyday, everyweek, everymonth.
+（* Ruby3.1とRoR7.0の勉強のためという側面もあり）
 
 # How to Install and Run the Project
 WIP
