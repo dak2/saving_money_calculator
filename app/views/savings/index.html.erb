@@ -1,14 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Savings</h1>
+<h1>節約額ランキング</h1>
 
 <div id="savings">
-  <% @savings.each do |saving| %>
-    <%= render saving %>
-    <p>
-      <%= link_to "Show this saving", saving %>
-    </p>
-  <% end %>
+  <table>
+    <tr>
+      <th>ユーザー名</th>
+      <th>合計節約額</th>
+    </tr>
+    <% @total_savings_by_user.each do |user, total_saving| %>
+      <tr>
+        <td>
+          <%= user.name %>
+        </td>
+        <td>
+          <%= total_saving %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New saving", new_saving_path %>
