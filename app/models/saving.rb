@@ -12,4 +12,11 @@
 
 class Saving < ApplicationRecord
   belongs_to :user
+
+  class << self
+    # TODO : 期間ごと集計を可能にする
+    def total_savings_by_user
+      group(:user).sum(:money).sort_by { |_, v| v }.reverse.to_h
+    end
+  end
 end

@@ -4,7 +4,7 @@ class SavingsController < ApplicationController
 
   # GET /savings or /savings.json
   def index
-    @savings = Saving.all
+    @total_savings_by_user = Saving.total_savings_by_user
   end
 
   # GET /savings/1 or /savings/1.json
