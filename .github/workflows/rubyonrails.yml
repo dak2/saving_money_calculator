@@ -34,14 +34,6 @@ jobs:
         with:
           ruby-version: 3.1
           bundler-cache: true
-      - name: Install gem
-        run: gem install net-pop
-      - uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
       - name: bundle install
         run: |
           gem install bundler
