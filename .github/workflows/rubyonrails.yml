@@ -37,6 +37,7 @@ jobs:
       - name: bundle install
         run: |
           gem install bundler
+          gem install net-pop
           bundle install --jobs 4 --retry 3 --path vendor/bundle
       # Add or replace database setup steps here
       - name: Set up database schema
