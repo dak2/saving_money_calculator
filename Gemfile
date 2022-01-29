@@ -3,8 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.0"
 
-# ref. https://github.com/rails/rails/issues/43998#issuecomment-1001083244
-gem "rails", github: "rails/rails", branch: "7-0-stable"
+gem "rails", "~> 7.0.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
