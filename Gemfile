@@ -3,8 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.0"
 
-# ref. https://github.com/rails/rails/issues/43998#issuecomment-1001083244
-gem "rails", github: "rails/rails", branch: "7-0-stable"
+gem "rails", "~> 7.0.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -45,7 +44,7 @@ gem "bootsnap", require: false
 gem 'devise'
 # ref. https://github.com/rails/rails/pull/42366
 gem "net-smtp", require: false
-
+gem "rubocop-rails"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -56,6 +55,7 @@ gem "net-smtp", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rubocop-rspec"
 end
 
 group :development do
