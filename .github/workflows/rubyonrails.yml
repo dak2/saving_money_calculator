@@ -19,6 +19,7 @@ jobs:
       shell: bash
       run: |
         docker-compose build
+        docker-compose run web gem install bundler
         docker-compose run web rails db:create
       env:
         RAILS_ENV: test
