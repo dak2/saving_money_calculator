@@ -44,7 +44,7 @@ gem "bootsnap", require: false
 gem 'devise'
 # ref. https://github.com/rails/rails/pull/42366
 gem "net-smtp", require: false
-
+gem "rubocop-rails"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -55,6 +55,7 @@ gem "net-smtp", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rubocop-rspec"
 end
 
 group :development do
