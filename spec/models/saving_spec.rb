@@ -9,7 +9,7 @@ RSpec.describe Saving, type: :model do
 
       before do
         2.times do |_i|
-          create(:saving, money: 1000, user: user)
+          create(:saving, money: 1000, user:)
         end
       end
 
