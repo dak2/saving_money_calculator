@@ -12,7 +12,7 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 5.0'
+gem 'puma', '>= 5.6.4'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
@@ -44,7 +44,6 @@ gem 'bootsnap', require: false
 gem 'devise'
 # ref. https://github.com/rails/rails/pull/42366
 gem 'net-smtp', require: false
-gem 'rubocop-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -61,8 +60,10 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'annotate'
+  gem 'brakeman', require: false
+  gem 'bundler-audit', require: false
+  gem 'rubocop-rails', require: false
   gem 'web-console'
-
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
