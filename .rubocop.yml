@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - "vendor/**/*" # rubocop config/default.yml
+    - "db/**/*"
+    - "bin/**/*"
+
+Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

@@ -1,5 +1,5 @@
 class SavingsController < ApplicationController
-  before_action :set_saving, only: %i[ show edit update destroy ]
+  before_action :set_saving, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /savings or /savings.json
@@ -8,8 +8,7 @@ class SavingsController < ApplicationController
   end
 
   # GET /savings/1 or /savings/1.json
-  def show
-  end
+  def show; end
 
   # GET /savings/new
   def new
@@ -17,8 +16,7 @@ class SavingsController < ApplicationController
   end
 
   # GET /savings/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /savings or /savings.json
   def create
@@ -26,7 +24,7 @@ class SavingsController < ApplicationController
 
     respond_to do |format|
       if @saving.save
-        format.html { redirect_to saving_url(@saving), notice: "Saving was successfully created." }
+        format.html { redirect_to saving_url(@saving), notice: 'Saving was successfully created.' }
         format.json { render :show, status: :created, location: @saving }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +37,7 @@ class SavingsController < ApplicationController
   def update
     respond_to do |format|
       if @saving.update(saving_params)
-        format.html { redirect_to saving_url(@saving), notice: "Saving was successfully updated." }
+        format.html { redirect_to saving_url(@saving), notice: 'Saving was successfully updated.' }
         format.json { render :show, status: :ok, location: @saving }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +51,20 @@ class SavingsController < ApplicationController
     @saving.destroy
 
     respond_to do |format|
-      format.html { redirect_to savings_url, notice: "Saving was successfully destroyed." }
+      format.html { redirect_to savings_url, notice: 'Saving was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_saving
-      @saving = Saving.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def saving_params
-      params.require(:saving).permit(:label, :money, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_saving
+    @saving = Saving.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def saving_params
+    params.require(:saving).permit(:label, :money, :user_id)
+  end
 end
