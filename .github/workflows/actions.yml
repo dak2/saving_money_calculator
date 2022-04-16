@@ -30,6 +30,7 @@ jobs:
       - name: Ruby security checks
         run: |
           gem install bundler-audit brakeman
+          bundle install
           bundle exec bundler-audit --update
           bundle exec brakeman -q -w2
   test:
