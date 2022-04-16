@@ -4,7 +4,7 @@ class SavingsController < ApplicationController
 
   # GET /savings or /savings.json
   def index
-    @total_savings_by_user = Saving.total_savings_by_user
+    @savings = Saving.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   # GET /savings/1 or /savings/1.json

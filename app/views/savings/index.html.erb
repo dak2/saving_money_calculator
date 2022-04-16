@@ -8,17 +8,18 @@
       <th>ユーザー名</th>
       <th>合計節約額</th>
     </tr>
-    <% @total_savings_by_user.each do |user, total_saving| %>
+    <% @savings.each do |saving| %>
       <tr>
         <td>
-          <%= user.name %>
+          <%= saving.user.name %>
         </td>
         <td>
-          <%= total_saving %>
+          <%= saving.money %>
         </td>
       </tr>
     <% end %>
   </table>
+  <%= paginate @savings %>
 </div>
 
 <%= link_to "New saving", new_saving_path %>
