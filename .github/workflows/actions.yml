@@ -24,6 +24,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '${{ steps.ruby-version.outputs.VERSION }}'
+          bundler-cache: true
       - name: Run linters
         run: bundle exec rubocop --parallel
       - name: Ruby security checks
@@ -62,6 +63,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '${{ steps.ruby-version.outputs.VERSION }}'
+          bundler-cache: true
       - name: Create database
         run: |
           bundle exec rails db:create
