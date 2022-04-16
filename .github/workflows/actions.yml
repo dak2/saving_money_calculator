@@ -15,11 +15,15 @@ jobs:
       DISABLE_BOOTSNAP_LOAD_PATH_CACHE: true
 
     steps:
-      - uses: actions/checkout@v2.4.0
-      - name: Set up Ruby
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Detect ruby version
+        id: ruby-version
+        run: echo "::set-output name=VERSION::$(cat .ruby-version)"
+      - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
+          ruby-version: '${{ steps.ruby-version.outputs.VERSION }}'
       - name: Run linters
         run: bundle exec rubocop --parallel
       - name: Ruby security checks
@@ -49,13 +53,15 @@ jobs:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@v2.4.0
-
-      - name: Set up Ruby
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Detect ruby version
+        id: ruby-version
+        run: echo "::set-output name=VERSION::$(cat .ruby-version)"
+      - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
-
+          ruby-version: '${{ steps.ruby-version.outputs.VERSION }}'
       - name: Create database
         run: |
           bundle exec rails db:create
