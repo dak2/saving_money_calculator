@@ -25,8 +25,12 @@ jobs:
         with:
           ruby-version: '${{ steps.ruby-version.outputs.VERSION }}'
           bundler-cache: true
-      - name: Run linters
-        run: bundle exec rubocop --parallel
+      - name: Run rubocop
+        uses: reviewdog/action-rubocop@v2
+        with:
+          rubocop_version: gemfile
+          rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile
+          reporter: github-pr-review
 
   sec-check:
     runs-on: ubuntu-latest
