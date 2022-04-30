@@ -45,6 +45,8 @@ gem 'devise'
 # ref. https://github.com/rails/rails/pull/42366
 gem 'net-smtp', require: false
 
+gem 'chartkick'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
