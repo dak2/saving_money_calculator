@@ -3,5 +3,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
+    @savings_top_three = @user.savings.order(money: :desc).limit(3)
   end
 end
