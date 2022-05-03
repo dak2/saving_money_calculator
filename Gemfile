@@ -47,6 +47,8 @@ gem 'net-smtp', require: false
 
 gem 'chartkick'
 
+gem 'kaminari'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
