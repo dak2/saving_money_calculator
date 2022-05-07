@@ -2,12 +2,13 @@
 #
 # Table name: savings
 #
-#  id         :integer          not null, primary key
-#  label      :string           default(""), not null
-#  money      :integer          default("0"), not null
-#  user_id    :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  label       :string           default(""), not null
+#  money       :integer          default(0), not null
+#  user_id     :bigint           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :bigint
 #
 
 require 'test_helper'
