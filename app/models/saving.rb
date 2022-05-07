@@ -13,7 +13,7 @@
 
 class Saving < ApplicationRecord
   belongs_to :user
-  belongs_to :category
+  belongs_to :category, optional: true
 
   class << self
     # TODO : 期間ごと集計を可能にする
