@@ -10,7 +10,7 @@ class UsersController < ApplicationController
                         .group('categories.label')
                         .count
                         .map do |k, v|
-                                  k = 'その他' if k.nil?
+      k = 'その他' if k.nil?
                                   { k => v }
     end
     @savings_by_categories = {}.merge(*savings_hash)
