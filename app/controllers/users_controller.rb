@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @savings_top_three = @user.savings.order(money: :desc).limit(3)
     # delegate to decorator
     savings_hash = @user.savings.left_joins(:category)
-                                .group('categories.label')
+                        .group('categories.label')
                                 .count
                                 .map do |k,v|
                                   k = 'その他' if k.nil?
