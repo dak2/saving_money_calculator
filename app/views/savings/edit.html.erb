@@ -1,10 +1,11 @@
-<h1>Editing saving</h1>
-
-<%= render "form", saving: @saving %>
-
-<br>
-
-<div>
-  <%= link_to "Show this saving", @saving %> |
-  <%= link_to "Back to savings", savings_path %>
+<div class='w-11/12 m-auto'>
+  <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
+    <h2 class='py-3 px-5 text-gray-700 bg-gray-100'>節約金額編集</h2>
+    <div class='p-5'>
+      <%= render "form", saving: @saving %>
+    </div>
+  </div>
+  <div>
+    <%= link_to '< page back', user_path(current_user.id), class: 'text-gray-700' %>
+  </div>
 </div>
