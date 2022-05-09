@@ -49,6 +49,8 @@ gem 'chartkick'
 
 gem 'kaminari'
 
+gem 'active_decorator'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
