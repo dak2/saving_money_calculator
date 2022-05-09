@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     # delegate to decorator
     savings_hash = @user.savings.left_joins(:category)
                         .group('categories.label')
-                                .count
+                        .count
                                 .map do |k,v|
                                   k = 'その他' if k.nil?
                                   { k => v }
