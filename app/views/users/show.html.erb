@@ -7,12 +7,20 @@
   </div>
 
   <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
+    <h2 class='py-3 px-5 bg-gray-100'>カテゴリ別節約</h2>
+    <div class='p-4'>
+      <%= pie_chart @savings_by_categories %>
+    </div>
+  </div>
+
+  <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
     <h2 class='py-3 px-5 bg-gray-100'>節約額トップ3<h2>
     <div class='p-4'>
       <table class='table-auto w-full'>
         <thead>
           <tr>
             <th class='px-4 py-2'>ラベル</th>
+            <th class='px-4 py-2'>カテゴリ</th>
             <th class='px-4 py-2'>金額</th>
             <th class='px-4 py-2'>日付</th>
           </tr>
@@ -21,6 +29,7 @@
           <% @savings_top_three.each do |saving| %>
             <tr>
               <td class='border px-4 py-2'><%= saving.label %></td>
+              <td class='border px-4 py-2'><%= saving.category&.label %></td>
               <td class='border px-4 py-2'><%= saving.money %></td>
               <td class='border px-4 py-2'><%= saving.created_at.strftime('%Y/%m/%d') %></td>
             </tr>
@@ -37,6 +46,7 @@
         <thead>
           <tr>
             <th class='px-4 py-2'>ラベル</th>
+            <th class='px-4 py-2'>カテゴリ</th>
             <th class='px-4 py-2'>金額</th>
             <th class='px-4 py-2'>日付</th>
           </tr>
@@ -45,6 +55,7 @@
           <% @savings.each do |saving| %>
             <tr>
               <td class='border px-4 py-2'><%= saving.label %></td>
+              <td class='border px-4 py-2'><%= saving.category&.label %></td>
               <td class='border px-4 py-2'><%= saving.money %></td>
               <td class='border px-4 py-2'><%= saving.created_at.strftime('%Y/%m/%d') %></td>
             </tr>
