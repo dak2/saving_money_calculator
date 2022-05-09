@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     savings_hash = @user.savings.left_joins(:category)
                         .group('categories.label')
                         .count
-                        .map do |k,v|
+                        .map do |k, v|
                                   k = 'その他' if k.nil?
                                   { k => v }
     end
