@@ -11,7 +11,7 @@ class UsersController < ApplicationController
                         .count
                         .map do |k, v|
       k = 'その他' if k.nil?
-                                  { k => v }
+      { k => v }
     end
     @savings_by_categories = {}.merge(*savings_hash)
   end
