@@ -20,7 +20,7 @@ class SavingsController < ApplicationController
 
   # POST /savings or /savings.json
   def create
-    @saving = Saving.new(saving_params)
+    @saving = Saving.new(saving_params.merge({ user: current_user }))
 
     respond_to do |format|
       if @saving.save
@@ -65,6 +65,6 @@ class SavingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def saving_params
-    params.require(:saving).permit(:label, :money, :user_id)
+    params.require(:saving).permit(:label, :money)
   end
 end
