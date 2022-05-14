@@ -1,7 +1,9 @@
 <%= form_with(model: saving) do |form| %>
   <% if saving.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(saving.errors.count, "error") %> prohibited this saving from being saved:</h2>
+    <div class='p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg'>
+      <h2>
+        <%= pluralize(saving.errors.count, 'error') %>
+      </h2>
 
       <ul>
         <% saving.errors.each do |error| %>
@@ -11,22 +13,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :label, style: "display: block" %>
-    <%= form.text_field :label %>
+  <div class='mb-3'>
+    <%= form.label '項目', class: 'block mb-2 text-sm font-medium text-gray-700' %>
+    <%= form.text_field :label, class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '買い物での節約'%>
   </div>
 
-  <div>
-    <%= form.label :money, style: "display: block" %>
-    <%= form.number_field :money %>
+  <div class='mb-3'>
+    <%= form.label '金額', class: 'block mb-2 text-sm font-medium text-gray-700' %>
+    <%= form.number_field :money, class: 'bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '1000'%>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class='mt-6'>
+    <%= form.submit '登録する', class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
   </div>
 <% end %>

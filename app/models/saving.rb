@@ -15,6 +15,9 @@ class Saving < ApplicationRecord
   belongs_to :user
   belongs_to :category, optional: true
 
+  validates :label, presence: true
+  validates :money, presence: true, numericality: { greater_than: 0 }
+
   class << self
     # TODO : 期間ごと集計を可能にする
     def total_savings_by_user
