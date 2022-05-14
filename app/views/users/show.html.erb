@@ -38,8 +38,8 @@
               <td class='border px-4 py-2'><%= saving.money %></td>
               <td class='border px-4 py-2'><%= saving.created_at.strftime('%Y/%m/%d') %></td>
               <td class='w-56	text-right'>
-                <%= link_to '編集する', edit_saving_path(saving.id), class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
-                <%= button_to '削除する', saving_path(saving.id), method: :delete, class: 'cursor-pointer focus:outline-none text-white bg-rose-500	 hover:bg-rose-700 focus:ring-2 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
+                <%= link_to t('savings.button.update'), edit_saving_path(saving.id), class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
+                <%= button_to t('savings.button.destroy'), saving_path(saving.id), method: :delete, class: 'cursor-pointer focus:outline-none text-white bg-rose-500	 hover:bg-rose-700 focus:ring-2 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
               </td>
             </tr>
           <% end %>
@@ -68,8 +68,8 @@
               <td class='border px-4 py-2'><%= saving.money %></td>
               <td class='border px-4 py-2'><%= saving.created_at.strftime('%Y/%m/%d') %></td>
               <td class='w-56	text-right'>
-                <%= link_to '編集する', edit_saving_path(saving.id), class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
-                <%= button_to '削除する', saving_path(saving.id), method: :delete, class: 'cursor-pointer focus:outline-none text-white bg-rose-500	 hover:bg-rose-700 focus:ring-2 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
+                <%= link_to t('savings.button.update'), edit_saving_path(saving.id), class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
+                <%= button_to t('savings.button.destroy'), saving_path(saving.id), method: :delete, class: 'cursor-pointer focus:outline-none text-white bg-rose-500	 hover:bg-rose-700 focus:ring-2 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
               </td>
             </tr>
           <% end %>

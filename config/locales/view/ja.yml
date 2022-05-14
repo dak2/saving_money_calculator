@@ -1,18 +1,24 @@
 ja:
   application:
-    title: "ガマネ"
+    title: 'ガマネ'
   users:
-    login: "ログイン"
-    logout: "ログアウト"
+    login: 'ログイン'
+    logout: 'ログアウト'
   savings:
-    create: "節約金額登録"
+    create: '節約金額登録'
+    update: '節約金額編集'
+    destroy: '節約金額削除'
+    button:
+      create: '節約金額登録'
+      update: '編集する'
+      destroy: '削除する'
     flash:
       create:
-        success: "新規作成に成功しました。"
-        failed: "新規作成に失敗しました。"
+        success: '新規作成に成功しました。'
+        failed: '新規作成に失敗しました。'
       update:
-        success: "更新に成功しました。"
-        failed: "更新に失敗しました。"
+        success: '更新に成功しました。'
+        failed: '更新に失敗しました。'
       destroy:
-        success: "削除に成功しました。"
-        failed: "削除に失敗しました。"
+        success: '削除に成功しました。'
+        failed: '削除に失敗しました。'
