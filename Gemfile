@@ -51,6 +51,8 @@ gem 'kaminari'
 
 gem 'active_decorator'
 
+gem 'rails-i18n'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
