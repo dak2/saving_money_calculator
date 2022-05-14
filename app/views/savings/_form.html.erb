@@ -1,7 +1,9 @@
 <%= form_with(model: saving) do |form| %>
   <% if saving.errors.any? %>
-    <div style='color: red'>
-      <h2><%= pluralize(saving.errors.count, 'error') %> prohibited this saving from being saved:</h2>
+    <div class='p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg'>
+      <h2>
+        <%= pluralize(saving.errors.count, 'error') %>
+      </h2>
 
       <ul>
         <% saving.errors.each do |error| %>
