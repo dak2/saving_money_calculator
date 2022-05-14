@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :savings
+  resources :savings, only: [:new, :edit, :create, :update, :destroy]
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
