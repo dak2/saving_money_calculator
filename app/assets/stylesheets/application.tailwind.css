@@ -8,12 +8,12 @@
 }
 
 .pagination * {
-  @apply px-3 py-2 mx-2;
-  @apply text-gray-700 no-underline bg-white rounded-lg;
+  @apply p-2;
+  @apply text-gray-700 no-underline rounded-lg;
 }
 
 .pagination a:hover {
-  @apply font-semibold bg-gray-100;
+  @apply font-semibold bg-gray-300;
 }
 
 .button_to {
