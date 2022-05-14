@@ -24,7 +24,7 @@ class SavingsController < ApplicationController
 
     respond_to do |format|
       if @saving.save
-        format.html { redirect_to root_url, notice: t('savings.create.success') }
+        format.html { redirect_to root_url, notice: t('savings.flash.create.success') }
         format.json { render :show, status: :created, location: @saving }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +37,7 @@ class SavingsController < ApplicationController
   def update
     respond_to do |format|
       if @saving.update(saving_params)
-        format.html { redirect_to root_url, notice: t('savings.update.success') }
+        format.html { redirect_to root_url, notice: t('savings.flash.update.success') }
         format.json { render :show, status: :ok, location: @saving }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class SavingsController < ApplicationController
     @saving.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_url, notice: t('savings.destroy.success') }
+      format.html { redirect_to root_url, notice: t('savings.flash.destroy.success') }
       format.json { head :no_content }
     end
   end
