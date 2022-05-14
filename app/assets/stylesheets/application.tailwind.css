@@ -15,3 +15,7 @@
 .pagination a:hover {
   @apply font-semibold bg-gray-100;
 }
+
+.button_to {
+  @apply inline-block;
+}
