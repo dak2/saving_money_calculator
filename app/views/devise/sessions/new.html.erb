@@ -1,26 +1,30 @@
-<h2>Log in</h2>
+<div class='w-11/12 m-auto shadow-xl rounded-lg overflow-hidden mt-6'>
+  <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+    <h2 class='py-4 bg-gray-100 text-center font-bold'>ログイン</h2>
+    <div class='p-4'>
+      <div class='mb-6'>
+        <label for='email' class='block mb-2 text-sm font-medium text-gray-900'><%= f.label :email %></label>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: 'test@example.com', required: true%>
+      </div>
+      <div class='mb-6'>
+        <label for='password' class='block mb-2 text-sm font-medium text-gray-900 '>Your password</label>
+        <%= f.password_field :password, autocomplete: 'current-password', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5', placeholder: '********', required: true%>
+      </div>
 
-<%= form_with model: @user, url: user_session_path, local: true do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class='mb-6'>
+        <%= f.submit 'ログイン', class: 'text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer'%>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <% if devise_mapping.rememberable? %>
+        <div class='field'>
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
     </div>
+
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<div class='w-11/12 m-auto mt-6'>
+  <%= render 'devise/shared/links' %>
+</div>
