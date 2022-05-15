@@ -1,6 +1,6 @@
 <div class='w-11/12 m-auto shadow-xl rounded-lg overflow-hidden mt-6'>
   <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-    <h2 class='py-4 bg-gray-100 text-center font-bold'>ログイン</h2>
+    <h2 class='py-4 bg-gray-100 text-center font-bold'><%= t('users.login') %></h2>
     <div class='p-4'>
       <div class='mb-6'>
         <label for='email' class='block mb-2 text-sm font-medium text-gray-900'><%= f.label :email %></label>
