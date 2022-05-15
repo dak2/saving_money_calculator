@@ -2,8 +2,16 @@ ja:
   application:
     title: 'ガマネ'
   users:
+    signup: 'サインアップ'
     login: 'ログイン'
     logout: 'ログアウト'
+    views:
+      signup_guide: '>新規登録はこちら'
+      login_guide: '>ログインはこちら'
+      min_password_length: 'パスワードは6文字以上で入力してください'
+    errors:
+      messages:
+        not_saved: '登録できませんでした。'
   savings:
     create: '節約金額登録'
     update: '節約金額編集'
