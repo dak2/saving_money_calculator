@@ -29,6 +29,11 @@ services:
     image: redis
     volumes:
       - redis_data:/data
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
 
 volumes:
   pg_data:
