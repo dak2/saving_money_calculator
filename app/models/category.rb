@@ -10,4 +10,8 @@
 class Category < ApplicationRecord
   has_many :savings
   enum :label, %i(food commodity hobby social cloth fitness book other)
+
+  def label_to_ja
+    CategoryDecorator.label_to_ja(label)
+  end
 end

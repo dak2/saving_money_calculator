@@ -2,14 +2,7 @@
 
 module UserDecorator
   def savings_by_categories
-    savings_hash = savings.left_joins(:category)
-                          .group('categories.label')
-                          .count
-                          .map do |k, v|
-      k = 'その他' if k.nil?
-      { k => v }
-    end
-
-    {}.merge(*savings_hash)
+    convert_to_label_ja = savings.includes(:category).left_joins(:category).map{ |s| s.category.label_to_ja }
+    convert_to_label_ja.group_by(&:itself).transform_values(&:size)
   end
 end
