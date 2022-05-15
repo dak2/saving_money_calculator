@@ -65,6 +65,6 @@ class SavingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def saving_params
-    params.require(:saving).permit(:label, :money)
+    params.require(:saving).permit(:label, :money, :category_id)
   end
 end
