@@ -8,8 +8,8 @@ describe UserDecorator, type: :decorator do
   describe '#savings_by_categories' do
     context '紐づくカテゴリが重複しない場合' do
       before do
-        %i(food commodity).each do |type|
-          create(:saving, category: create(:category, type), user: user)
+        %i[food commodity].each do |type|
+          create(:saving, category: create(:category, type), user:)
         end
       end
 
@@ -20,8 +20,8 @@ describe UserDecorator, type: :decorator do
 
     context '紐づくカテゴリが重複する場合' do
       before do
-        %i(food food commodity).each do |type|
-          create(:saving, category: create(:category, type), user: user)
+        %i[food food commodity].each do |type|
+          create(:saving, category: create(:category, type), user:)
         end
       end
 

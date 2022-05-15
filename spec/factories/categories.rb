@@ -9,7 +9,7 @@
 #
 FactoryBot.define do
   factory :category do
-    Category.labels.keys.each do |label|
+    Category.labels.each_key do |label|
       trait :"#{label}" do
         label { label }
       end
