@@ -9,6 +9,10 @@
 #
 FactoryBot.define do
   factory :category do
-    sequence(:label) { |n| "category_#{n}" }
+    Category.labels.keys.each do |label|
+      trait :"#{label}" do
+        label { label }
+      end
+    end
   end
 end
