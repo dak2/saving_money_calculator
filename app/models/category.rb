@@ -9,4 +9,5 @@
 #
 class Category < ApplicationRecord
   has_many :savings
+  enum :label, %i(food commodity hobby social cloth fitness book other)
 end
