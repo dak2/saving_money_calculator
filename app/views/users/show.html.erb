@@ -1,55 +1,12 @@
-<div class='w-11/12 m-auto'>
+<div class='w-9/12 m-auto mt-4'>
   <% if notice.present? %>
     <p class='p-4 text-sm text-green-700 bg-green-100 rounded-lg mb-6'>
       <span class='font-medium'>Success! </span> <%= notice %>
     </p>
   <% end %>
-  <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
-    <h2 class='py-3 px-5 bg-gray-100'>節約回数</h2>
-    <div class='p-4'>
-      <%= column_chart @user.savings.group("to_char(created_at, 'yyyy/mm/dd')").count %>
-    </div>
-  </div>
 
-  <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
-    <h2 class='py-3 px-5 bg-gray-100'>カテゴリ別節約</h2>
-    <div class='p-4'>
-      <%= pie_chart @user.savings_by_categories %>
-    </div>
-  </div>
-
-  <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
-    <h2 class='py-3 px-5 bg-gray-100'>節約額トップ3<h2>
-    <div class='p-4'>
-      <table class='table-auto w-full'>
-        <thead>
-          <tr>
-            <th class='px-4 py-2'>ラベル</th>
-            <th class='px-4 py-2'>カテゴリ</th>
-            <th class='px-4 py-2'>金額</th>
-            <th class='px-4 py-2'>日付</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @savings_top_three.each do |saving| %>
-            <tr>
-              <td class='border px-4 py-2'><%= saving.label %></td>
-              <td class='border px-4 py-2'><%= saving.category&.label_to_ja %></td>
-              <td class='border px-4 py-2'><%= saving.money %></td>
-              <td class='border px-4 py-2'><%= saving.created_at.strftime('%Y/%m/%d') %></td>
-              <td class='w-56	text-right'>
-                <%= link_to t('savings.button.update'), edit_saving_path(saving.id), class: 'cursor-pointer focus:outline-none text-white bg-teal-500 hover:bg-teal-600 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
-                <%= button_to t('savings.button.destroy'), saving_path(saving.id), method: :delete, class: 'cursor-pointer focus:outline-none text-white bg-rose-500	 hover:bg-rose-700 focus:ring-2 focus:ring-rose-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2'%>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class='shadow-xl rounded-lg overflow-hidden mb-6'>
-    <h2 class='py-3 px-5 bg-gray-100'>節約額一覧<h2>
+  <div class='shadow-xl overflow-hidden border rounded-lg'>
+    <h2 class='py-3 px-5 bg-gray-100 border-b'>節約額一覧<h2>
     <div class='p-4'>
       <table class='table-auto w-full'>
         <thead>

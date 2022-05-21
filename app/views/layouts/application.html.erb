@@ -11,8 +11,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class='font-sans'>
-    <%= render 'partial/navigation' %>
+  <body class='flex font-sans h-screen'>
+    <% if user_signed_in? %>
+      <%= render 'partial/sidebar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

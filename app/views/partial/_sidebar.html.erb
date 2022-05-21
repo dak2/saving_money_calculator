@@ -1,0 +1,36 @@
+<div class="w-64 text-white" aria-label="Sidebar">
+  <div class="overflow-y-auto py-4 px-3 bg-teal-500 h-full">
+    <ul class="space-y-2">
+        <li>
+          <span class="flex items-center p-2 text-base font-normal rounded-lg cursor-pointer">
+            <%= render 'partial/icons/money' %>
+            <%= link_to t('application.title'), root_path, class: 'font-semibold text-lg ml-3 pt-2'%>
+          </span>
+        </li>
+        <li>
+          <span class="flex items-center p-2 text-base font-normal rounded-lg hover:bg-teal-600 cursor-pointer">
+            <%= render 'partial/icons/wallet' %>
+            <%= link_to "Savings", root_path, class: 'flex-1 ml-3 whitespace-nowrap'%>
+          </span>
+        </li>
+        <li>
+          <span class="flex items-center p-2 text-base font-normal rounded-lg hover:bg-teal-600 pointer-events-none">
+            <svg class="w-6 h-6 transition duration-75 group-hover:text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+            <span class="ml-3">Dashboard</span>
+          </span>
+        </li>
+        <li>
+          <span class="flex items-center p-2 text-base font-normal rounded-lg hover:bg-teal-600 pointer-events-none">
+            <svg class="flex-shrink-0 w-6 h-6 transition duration-75 group-hover:text-gray-900" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+            <span class="flex-1 ml-3 whitespace-nowrap">User</span>
+          </span>
+        </li>
+        <li>
+          <span class="flex items-center p-2 text-base font-normal rounded-lg hover:bg-teal-600 cursor-pointer">
+            <svg class="flex-shrink-0 w-6 h-6 transition duration-75 " width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 7L3 12L8 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 3L21 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'inline-block flex-1 ml-3 whitespace-nowrap'%>
+          </span>
+        </li>
+    </ul>
+  </div>
+</div>
