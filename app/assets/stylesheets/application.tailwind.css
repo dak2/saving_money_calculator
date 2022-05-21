@@ -4,7 +4,7 @@
 
 .pagination {
   @apply flex justify-center;
-  @apply my-2 py-2;
+  @apply py-2;
 }
 
 .pagination * {
