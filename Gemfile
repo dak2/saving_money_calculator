@@ -53,6 +53,8 @@ gem 'active_decorator'
 
 gem 'rails-i18n'
 
+gem 'ransack'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

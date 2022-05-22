@@ -20,6 +20,9 @@ ja:
       create: '節約金額登録'
       update: '編集する'
       destroy: '削除する'
+    search_box:
+      search: '検索'
+      clear: 'クリア'
     flash:
       create:
         success: '新規作成に成功しました。'
