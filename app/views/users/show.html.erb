@@ -13,9 +13,9 @@
       <table class='table-auto w-full'>
         <thead>
           <tr>
-            <th class='px-4 py-2'>ラベル</th>
+            <th class='px-4 py-2 text-blue-500'><%= sort_link(@q, :label, 'ラベル') %></th>
             <th class='px-4 py-2'>カテゴリ</th>
-            <th class='px-4 py-2'>金額</th>
+            <th class='px-4 py-2 text-blue-500'><%= sort_link(@q, :money, '金額') %></th>
             <th class='px-4 py-2'>日付</th>
           </tr>
         </thead>
