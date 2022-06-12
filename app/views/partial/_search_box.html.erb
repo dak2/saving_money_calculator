@@ -1,7 +1,7 @@
 <div class='shadow-xl overflow-hidden border rounded-md mb-6'>
   <h2 class='py-3 px-5 bg-gray-100 border-b'>検索<h2>
   <div class='p-4'>
-    <%= search_form_for @q, url: root_path do |f| %>
+    <%= search_form_for @q, html: { data: { turbo_frame: "savings-list" } }, url: root_path do |f| %>
 
       <%= f.label :label_cont, 'ラベル', class: 'mb-2 text-sm font-medium text-gray-900' %>
       <%= f.search_field :label_cont, class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 p-2.5' %>
